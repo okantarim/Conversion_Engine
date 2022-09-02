@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -24,11 +24,11 @@ namespace WinFormsApp1
 
         private void btnConvert_Click(object sender, EventArgs e)
         {
-            if (cmbBox1.SelectedItem == "string")
+            if (cmbBox1.SelectedItem.ToString() == "string")
             {
                 lbl1.Text = txtBox1.Text;
             }
-            else if (cmbBox1.SelectedItem == "int")
+            else if (cmbBox1.SelectedItem.ToString() == "int")
             {
                 try
                 {
@@ -41,7 +41,7 @@ namespace WinFormsApp1
                     MessageBox.Show("Please enter an integer value.");
                 }
             }
-            else if (cmbBox1.SelectedItem == "double")
+            else if (cmbBox1.SelectedItem.ToString() == "double")
             {
                 try
                 {
@@ -54,12 +54,12 @@ namespace WinFormsApp1
                     MessageBox.Show("Please enter an double type data.");
                 }
             }
-            else if (cmbBox1.SelectedItem == "float")
+            else if (cmbBox1.SelectedItem.ToString() == "float")
             {
                 try
                 {
-                    float number4 = float.Parse(txtBox1.Text);
-                    lbl1.Text = Convert.ToString(number4);
+                    float number3 = float.Parse(txtBox1.Text);
+                    lbl1.Text = Convert.ToString(number3);
                 }
                 catch (FormatException)
                 {
@@ -67,27 +67,24 @@ namespace WinFormsApp1
                     MessageBox.Show("Please enter a float type data.");
                 }
             }
-            else if (cmbBox1.SelectedItem == "char")
+            else if (cmbBox1.SelectedItem.ToString() == "char")
             {
                 try
                 {
-                    char[] number3 = txtBox1.Text.ToCharArray();
-                    lbl1.Text = Convert.ToString(number3);
+                    char[] number4 = txtBox1.Text.ToCharArray();
+                    lbl1.Text = Convert.ToString(number4);
                 }
                 catch (FormatException)
                 {
 
                     MessageBox.Show("Please enter a char type data.");
                 }
-                
-
             }
-
         }
-
         private void btnClose_Click(object sender, EventArgs e)
         {
             Close();
         }
     }
 }
+
